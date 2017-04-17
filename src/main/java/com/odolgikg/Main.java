@@ -1,8 +1,5 @@
 package com.odolgikg;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -20,6 +17,10 @@ public class Main {
 
     public static void main(String[] args) {
         try {
+            if (args == null || args.length == 0) {
+                System.out.println("you must specify path to ssl certificate file");
+                return;
+            }
             CertificateFactory certFactory;
             certFactory = CertificateFactory.getInstance("X.509");
             InputStream inputStream = null;
